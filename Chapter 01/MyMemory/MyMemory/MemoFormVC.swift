@@ -88,3 +88,10 @@ extension MemoFormVC: UITextViewDelegate {
         self.navigationItem.title = subject
     }
 }
+
+// br delete
+// y/n? yes
+// => Objc lldb -> po
+// expression => p po expr a = 30
+
+// expr a = 50  lldb ) {}

@@ -16,6 +16,9 @@
 		F0DBADD828A3B7170078F35A /* Chapter02_InputFormTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBADD728A3B7170078F35A /* Chapter02_InputFormTests.swift */; };
 		F0DBADE228A3B7170078F35A /* Chapter02_InputFormUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBADE128A3B7170078F35A /* Chapter02_InputFormUITests.swift */; };
 		F0DBADE428A3B7170078F35A /* Chapter02_InputFormUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBADE328A3B7170078F35A /* Chapter02_InputFormUITestsLaunchTests.swift */; };
+		F0DBADF228A3EB2A0078F35A /* ReadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBADF128A3EB2A0078F35A /* ReadViewController.swift */; };
+		F0DBADF628A3F2E70078F35A /* SDMiSaeng.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F0DBADF528A3F1C20078F35A /* SDMiSaeng.ttf */; };
+		F0DBADF928A3F5300078F35A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = F0DBADF828A3F5300078F35A /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,8 @@
 		F0DBADDD28A3B7170078F35A /* Chapter02-InputFormUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Chapter02-InputFormUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0DBADE128A3B7170078F35A /* Chapter02_InputFormUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter02_InputFormUITests.swift; sourceTree = "<group>"; };
 		F0DBADE328A3B7170078F35A /* Chapter02_InputFormUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter02_InputFormUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F0DBADF128A3EB2A0078F35A /* ReadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadViewController.swift; sourceTree = "<group>"; };
+		F0DBADF528A3F1C20078F35A /* SDMiSaeng.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDMiSaeng.ttf; path = "../../../../../../../Downloads/swift_practice/Chapter02-InputForm/Chapter02-InputForm/SDMiSaeng.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DBADF928A3F5300078F35A /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +85,7 @@
 		F0DBADB428A3B7160078F35A = {
 			isa = PBXGroup;
 			children = (
+				F0DBADF328A3F1AF0078F35A /* Resources */,
 				F0DBADBF28A3B7160078F35A /* Chapter02-InputForm */,
 				F0DBADD628A3B7170078F35A /* Chapter02-InputFormTests */,
 				F0DBADE028A3B7170078F35A /* Chapter02-InputFormUITests */,
@@ -99,9 +106,9 @@
 		F0DBADBF28A3B7160078F35A /* Chapter02-InputForm */ = {
 			isa = PBXGroup;
 			children = (
+				F0DBADF028A3EB020078F35A /* ViewControllers */,
 				F0DBADC028A3B7160078F35A /* AppDelegate.swift */,
 				F0DBADC228A3B7160078F35A /* SceneDelegate.swift */,
-				F0DBADC428A3B7160078F35A /* ViewController.swift */,
 				F0DBADC628A3B7160078F35A /* Main.storyboard */,
 				F0DBADC928A3B7170078F35A /* Assets.xcassets */,
 				F0DBADCB28A3B7170078F35A /* LaunchScreen.storyboard */,
@@ -127,6 +134,31 @@
 			path = "Chapter02-InputFormUITests";
 			sourceTree = "<group>";
 		};
+		F0DBADF028A3EB020078F35A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0DBADC428A3B7160078F35A /* ViewController.swift */,
+				F0DBADF128A3EB2A0078F35A /* ReadViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0DBADF328A3F1AF0078F35A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0DBADF428A3F1BB0078F35A /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0DBADF428A3F1BB0078F35A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F0DBADF528A3F1C20078F35A /* SDMiSaeng.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +175,9 @@
 			dependencies = (
 			);
 			name = "Chapter02-InputForm";
+			packageProductDependencies = (
+				F0DBADF828A3F5300078F35A /* Then */,
+			);
 			productName = "Chapter02-InputForm";
 			productReference = F0DBADBD28A3B7160078F35A /* Chapter02-InputForm.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +250,9 @@
 				Base,
 			);
 			mainGroup = F0DBADB428A3B7160078F35A;
+			packageReferences = (
+				F0DBADF728A3F5300078F35A /* XCRemoteSwiftPackageReference "Then" */,
+			);
 			productRefGroup = F0DBADBE28A3B7160078F35A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DBADF628A3F2E70078F35A /* SDMiSaeng.ttf in Resources */,
 				F0DBADCD28A3B7170078F35A /* LaunchScreen.storyboard in Resources */,
 				F0DBADCA28A3B7170078F35A /* Assets.xcassets in Resources */,
 				F0DBADC828A3B7160078F35A /* Main.storyboard in Resources */,
@@ -260,6 +299,7 @@
 			files = (
 				F0DBADC528A3B7160078F35A /* ViewController.swift in Sources */,
 				F0DBADC128A3B7160078F35A /* AppDelegate.swift in Sources */,
+				F0DBADF228A3EB2A0078F35A /* ReadViewController.swift in Sources */,
 				F0DBADC328A3B7160078F35A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +642,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F0DBADF728A3F5300078F35A /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F0DBADF828A3F5300078F35A /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F0DBADF728A3F5300078F35A /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F0DBADB528A3B7160078F35A /* Project object */;
 }

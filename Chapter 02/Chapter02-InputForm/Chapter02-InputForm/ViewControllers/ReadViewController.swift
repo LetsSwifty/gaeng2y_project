@@ -31,6 +31,7 @@ class ReadViewController: UIViewController {
         $0.text = "업데이트 주기: \(updateInterval)분마다"
     }
     
+    // MARK: - ♻️ Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         

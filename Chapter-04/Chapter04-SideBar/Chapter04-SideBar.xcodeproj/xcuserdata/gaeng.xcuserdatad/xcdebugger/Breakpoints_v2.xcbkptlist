@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5F51B505-13FC-4A25-83AB-8095F3B0B02E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0539236C-9CD6-4606-B7DF-AE783F556F1D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/Chapter04-SideBar-fnwvljbzptlzcaccndntfeaijreb/SourcePackages/checkouts/SideMenu/Pod/Classes/SideMenuAnimationController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "transition(presenting:animated:interactive:alongsideTransition:complete:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0539236C-9CD6-4606-B7DF-AE783F556F1D - ea4c8885cb032479"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SideMenu.SideMenuAnimationController.transition(presenting: Swift.Bool, animated: Swift.Bool, interactive: Swift.Bool, alongsideTransition: Swift.Optional&lt;() -&gt; ()&gt;, complete: Swift.Bool, completion: Swift.Optional&lt;(Swift.Bool) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Chapter04-SideBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gaeng/Library/Developer/Xcode/DerivedData/Chapter04-SideBar-fnwvljbzptlzcaccndntfeaijreb/SourcePackages/checkouts/SideMenu/Pod/Classes/SideMenuAnimationController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "288">
+               </Location>
+               <Location
+                  uuid = "0539236C-9CD6-4606-B7DF-AE783F556F1D - c8158059fa6c50c7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in SideMenu.SideMenuAnimationController.transition(presenting: Swift.Bool, animated: Swift.Bool, interactive: Swift.Bool, alongsideTransition: Swift.Optional&lt;() -&gt; ()&gt;, complete: Swift.Bool, completion: Swift.Optional&lt;(Swift.Bool) -&gt; ()&gt;) -&gt; ()"
+                  moduleName = "Chapter04-SideBar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gaeng/Library/Developer/Xcode/DerivedData/Chapter04-SideBar-fnwvljbzptlzcaccndntfeaijreb/SourcePackages/checkouts/SideMenu/Pod/Classes/SideMenuAnimationController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "48">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5740D074-F178-4F50-9DFC-9977B5F4F90B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../Library/Developer/Xcode/DerivedData/Chapter04-SideBar-fnwvljbzptlzcaccndntfeaijreb/SourcePackages/checkouts/SideMenu/Pod/Classes/SideMenuPresentationController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "presentationTransition()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

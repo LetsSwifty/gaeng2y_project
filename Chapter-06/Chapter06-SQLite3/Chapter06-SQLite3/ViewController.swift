@@ -9,58 +9,56 @@ import UIKit
 import SQLite3
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        var db: OpaquePointer? = nil    // SQLite 연결 정보를 담을 객체
-        var stmt: OpaquePointer? = nil  // 컴파일된 SQL을 담을 객체
-        
-        let fileMgr = FileManager()     // 파일 매니저 객체 생성
-        let docPathURL = fileMgr.urls(for: .documentDirectory,
-                                      in: .userDomainMask).first!   // 생성된 매니저 객체를 사용하여 앱 내의 문서 디렉토리 경로를 찾고, 이를 URL 객체로 생성
-        let dbPath = docPathURL.appending(component: "db.sqlite").path  // URL 객체에 "db.sqlite" 파일 경로를 추가한 SQLite3 데이터베이스 경로를 만들어낸다
-        
-        let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
-        
-        if sqlite3_open(dbPath, &db) == SQLITE_OK {
-            // sql 구문을 전달할 준비, 컴파일된 SQL 구문 객체가 생성된다
-            if sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK {
-                if sqlite3_step(stmt) == SQLITE_DONE {
-                    print("Create Table Success")
-                }
-                sqlite3_finalize(stmt)
-            } else {
-                print("Prepare Statement Fail")
-            }
-            
-            sqlite3_close(db)
-        } else {
+        let dbPath = self.getDBPath()
+        self.dbExecute(dbPath: dbPath)
+    }
+    
+    func dbExecute(dbPath: String) {
+        var db: OpaquePointer? = nil // SQLite 연결 정보를 담을 변수
+        guard sqlite3_open(dbPath, &db) == SQLITE_OK else {
             print("Database Connect Fail")
             return
         }
         
+        // 데이터베이스 연결 종료
+        defer {
+            print("Close Database Connection")
+            sqlite3_close(db)
+        }
         
+        var stmt: OpaquePointer? = nil // 컴파일된 SQL 정보를 담을 변수
+        let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)"
+        guard sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+            print("Prepare Statement Fail")
+            return
+        }
         
-        /*
-        C 기반의 함수에서 결과값을 인자값에 담아 전달하는 것은 대부분 함수가 반환해야 할 값이 따로 있어서인 경우가 많다
-        sqlite3_open() 함수는 반환값으로 처리 결과, 즉 성공/실패/오류 등을 반환한다
-         
-        sqlite3_open() 함수의 인자값을 통해 sqlite3 객체를 전달받아야 한다
-        그런데 이를 전달받기 위해 사용한 self.db 인자값의 형식이 다소 특이하다
-         일반 인자값 형태가 아니라 & 연산자이다
-         이것은 인자값을 참조 방식으로 전달하기 위한 연산자로, 이른바 레퍼런스 전달이라고 부르는 방식이다
-         
-         근데 왜 참조 방식으로 넘김?
-         
-         OpaquePointer가 구조체이기 때문이다
-         
-         인자값으로 사용될 때 항상 참조 형태로 전달되는 클래스와 달리 구조체는 복사에 의해 전달된다
-         
-        */
+        // stmt 변수 해제
+        defer {
+            print("Finalize Statement")
+            sqlite3_finalize(stmt)
+        }
+        
+        if sqlite3_step(stmt) == SQLITE_DONE {
+            print("Create Table Success!")
+        }
     }
-
-
+    
+    func getDBPath() -> String {
+        // 앱 내 문서 디렉터리 경로에서 SQLite DB 파일을 찾는다.
+        let fileMgr = FileManager()
+        let docPathURL = fileMgr.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let dbPath = docPathURL.appendingPathComponent("db.sqlite").path
+        
+        // dbPath 경로에 db.sqlite 파일이 없다면 앱 번들에 만들어 둔 db.sqlite를 가져와 복사한다.
+        if fileMgr.fileExists(atPath: dbPath) == false {
+            let dbSource = Bundle.main.path(forResource: "db", ofType: "sqlite")
+            try! fileMgr.copyItem(atPath: dbSource!, toPath: dbPath)
+        }
+        return dbPath
+    }
 }
+
 
